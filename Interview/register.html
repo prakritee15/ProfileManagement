@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <!-- css -->
+    <style type="text/css"> 
+        body
+        {
+            margin:0px;
+            background-image: url("images 4.jpg");
+            background-color: #cccccc;
+            height: 500px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            color:#f9fcf5;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        
+        #main{
+			text-align: center;
+            text-transform: uppercase;
+            color: black;
+            width:600px; height:auto; overflow:hidden; padding-bottom:20px; 
+            margin-left:auto; margin-right:auto; 
+            border-radius:5px; padding-left:10px; margin-top:100px; 
+            border-top:3px double #f1f1f1; 
+            border-bottom:3px double #f1f1f1; padding-top:20px;
+        }
+        
+        #main table{
+            font-family:"Comic Sans MS", cursive;
+        }
+        /* css code for textbox */
+        #main .tb{
+            height:28px; width:230px; border:1px solid #f26724; color:#fd7838; 
+            font-weight:bold; border-left:5px solid #f7f7f7; opacity:0.9;
+        }
+        
+        #main .tb:focus{
+            height:28px; border:1px solid #f26724; outline:none; border-left:5px solid #f7f7f7;
+        }
+    
+        /* css code for button*/
+        #main .btn{
+            width:150px; height:32px; outline:none;  color:#f7f7f7; 
+            font-weight:bold; border:0px solid #f26724; 
+            text-shadow: 0px 0.5px 0.5px #fff; border-radius: 2px; 
+            font-weight: 600; color: #f26724; letter-spacing: 1px; 
+            font-size:14px; background-color:#f1f1f1; -webkit-transition: 1s; -moz-transition: 1s; 
+            transition: 1s;
+        }
+      
+        #main .btn:hover{
+            background-color:#f26724; outline:none;  
+            border-radius: 2px; color:#f1f1f1; border:1px solid #f1f1f1;
+            -webkit-transition: 1s; -moz-transition: 1s; transition: 1s; 
+        }
+</style>
+<!-- CSS ends here -->
+
+<!-- Javascript starts here -->
+<script>
+    function registration()
+	{
+
+        var fname= document.getElementById("t1").value;
+        var mname= document.getElementById("t2").value;
+        var lname= document.getElementById("t3").value;
+		var email= document.getElementById("t4").value;
+		var pwd= document.getElementById("t5").value;			
+		var cpwd= document.getElementById("t6").value;
+		var address= document.getElementById("t7").value;
+		var phone= document.getElementById("t8").value;
+		
+        //email id expression code
+		var pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+		var letters = /^[A-Za-z]+$/;
+		var numbers = /^[0-9]/;
+		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        //Name validation
+		if(fname=='')
+		{
+			alert('Please enter your first name');
+		}
+		else if(!letters.test(fname))
+		{
+			alert('First Name field required only alphabet characters');
+        }
+        //if(mname=='')
+		//{
+		//	alert('Please enter your middle name');
+		//}
+		//else if(!letters.test(mname))
+		//{
+		//	alert('Middle Name field required only alphabet characters');
+        //}
+        if(lname=='')
+		{
+			alert('Please enter your last name');
+		}
+		else if(!letters.test(lname))
+		{
+			alert('Last Name field required only alphabet characters');
+		}
+		//email validation
+		else if(email=='')
+		{
+			alert('Please enter your user email id');
+		}
+		else if (!filter.test(email))
+		{
+			alert('Invalid email');
+		}
+		//adress validation
+		if(address=='')
+		{
+			alert('Please enter your complete address');
+		}
+		else if(!letters.test(address))
+		{
+			alert('Address field required only alphabet characters');
+		}
+		if(phone=='')
+		{
+			alert('Please enter your Phone Number');
+		}
+		//phone validation
+		else if(!numbers.test(phone))
+		{
+			alert('Phone field required only numeric characters');
+        }
+		//password validation
+		else if(pwd=='')
+		{
+			alert('Please enter Password');
+		}
+		//confirming password
+		else if(cpwd=='')
+		{
+			alert('Enter Confirm Password');
+		}
+		else if(!pwd_expression.test(pwd))
+		{
+			alert ('Upper case, Lower case, Special character and Numeric letter are required in Password filed');
+		}
+		else if(pwd != cpwd)
+		{
+			alert ('Password not Matched');
+		}
+		else if(document.getElementById("t5").value.length < 6)
+		{
+			alert ('Password minimum length is 6');
+		}
+		else if(document.getElementById("t5").value.length > 12)
+		{
+			alert ('Password max length is 12');
+		}
+		else
+		{				                            
+               alert('Thank You for Login & You are Redirecting to your login page');
+			   // Redirecting to other page or webste code. 
+			   window.location = "../Interview/login.html"; 
+		}
+	}
+</script>
+<!-- Javascript ends here -->
+
+  <title>Welcome To Registration Form</title>
+  </head>
+
+	<body>
+	<!-- Main div code -->
+	<div id="main">
+	<div class="h-tag">
+	<h2>Create Your Account</h2>
+	</div>
+	<!-- create account div -->
+	<div class="login">
+	<table cellspacing="2" align="center" cellpadding="8" border="0">
+	<tr>
+	<td align="right">Enter First Name :</td>
+	<td><input type="text" placeholder="Enter first name here" id="t1" class="tb" /></td>
+    </tr>
+    <tr>
+    <td align="right">Enter Middle Name :</td>
+    <td><input type="text" placeholder="Enter middle name here" id="t2" class="tb" /></td>
+    </tr>
+    <tr>
+    <td align="right">Enter Last Name :</td>
+    <td><input type="text" placeholder="Enter last name here" id="t3" class="tb" /></td>
+    </tr>
+	<tr>
+	<td align="right">Enter Email ID :</td>
+	<td><input type="text" placeholder="Enter Email ID here" id="t4" class="tb" /></td>
+	</tr>
+	<tr>
+	<!-- <td align="right">Enter Username :</td>
+	<td><input type="text" placeholder="Enter Username here" id="t3" class="tb" /></td>
+	</tr> -->
+	<tr>
+	<td align="right">Enter Password :</td>
+	<td><input type="password" placeholder="Enter Password here" id="t5" class="tb" /></td>
+	</tr>
+	<tr>
+	<td align="right">Enter Confirm Password :</td>
+	<td><input type="password" placeholder="Confirm Password here" id="t6" class="tb" /></td>
+	</tr>
+	<td align="right">Enter Complete Address :</td>
+	<td><input type="text" placeholder="Enter Complete address here" id="t7" class="tb" /></td>
+	</tr>
+	<td align="right">Enter Phone Number :</td>
+	<td><input type="number" placeholder="Enter Phone number here" id="t8" class="tb" /></td>
+	</tr>
+	<tr>
+	<td>
+	<input type="reset" value="Clear Form" id="res" class="btn" />
+	<input type="submit" value="Create Account" class="btn" onclick="registration()" /></td>
+	</tr>
+	</table>
+	</div>
+	<!-- create account box ending here.. -->
+	</div>
+	<!-- Main div ending here... -->
+	</body>
+	</html>

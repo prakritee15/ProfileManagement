@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		 <link rel="stylesheet" type="text/css" href="header.css">
+		<!-- CSS Starts here -->
+		
+      <style type="text/css">
+        body
+   {
+	 margin:0px; 
+	   background-image: url("profile bck.jpg");
+     background-repeat: no-repeat;
+     background-attachment: fixed;  
+     background-size: cover;
+     font-family: "Lato", sans-serif;
+     }
+     .responsive {
+        width: 5%;
+        height: auto;
+      }
+        h2{
+            text-align: center;
+			font-size:50px;
+			height: 0px;
+        }
+        p{
+            text-align: center;
+            font-size:30px
+        }
+        .sidebar {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 50px;
+          }
+          
+          .sidebar a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+          }
+          
+          .sidebar a:hover {
+            color: #f1f1f1;
+          }
+          
+          .main {
+            margin-left: 160px; /* Same as the width of the sidenav */
+            padding: 0px 50px;
+          }
+          
+          @media screen and (max-height: 450px) {
+            .sidebar {padding-top: 15px;}
+            .sidebar a {font-size: 18px;}
+          }
+          .avatar {
+            vertical-align: middle;
+            width: 100px;
+            height: 100px;
+            border-radius: 60%;
+            border-color: #f5f5f5;
+            border-style: solid;
+          }
+          span.icon {
+            position: absolute;
+            top: 65px;
+            right: 30px;
+            background:#e2e2e2;
+            border-radius:100%;
+            width:30px;
+            height:30px;
+            line-height:30px;
+            vertical-align:middle;
+            text-align:center;
+            color:#0000ff;
+            font-size:14px;
+            cursor:pointer;
+          }
+          /*Post images css starts here*/
+          /*same class naem of post and posted content*/
+.mainpost
+{	
+
+	background-color: #FFFFFF;
+	border: 1px solid #B7B7B7;
+	/*position: fixed;*/
+	border-radius: 4px;
+	padding: 15px;
+	box-shadow: 4px 1.5px 5px #999999;
+	margin-bottom: 5px;
+}
+
+/*user image size of the post and posted content*/
+.mainpost .userimg img
+{
+	width: 45px;
+	height: 45px;
+	/*padding-bottom: 30px;*/ 
+	float: left;
+}
+
+/*user name design of post and posted content*/
+.mainpost .name
+{
+	display: inline;
+	padding-left: 8px;
+	font-size: 16px;
+	position: relative;
+	top: 4px;
+	font-weight: bold;
+	/*float: left;*/
+}
+
+/*time of post of design for post and posted content*/
+.mainpost .time
+{
+	display: inline;
+	padding-left: 8px;
+	font-size: 12px;
+	color: #999999;
+	/*float: left;*/
+}
+
+/*parent of content image of the post and posted content*/
+.mainpost .post
+{
+	/*padding: 30px;*/
+	/*margin-top: 10px;*/
+	max-height: 250px;
+}
+
+
+/*content image of the post and posted content*/
+.mainpost .postimg
+{
+	max-width: 100%;
+	max-height: 250px;
+	display: block;
+	margin: 0 auto;
+}
+
+/*paragraph of the posted content*/
+.mainpost .quotes
+{
+	margin: 12px 4px 8px 4px;
+	font-size: 14px;
+	/*letter-spacing: 0.5px;*/
+	font-family: sans-serif;
+	text-align: justify;
+	padding: 5px;
+}
+
+/*post article of the input area*/
+.main .quotes textarea
+{
+	margin-top: 8px;
+	width: 100%;
+	height: 70px;
+	outline: 0px;
+	padding: 5px;
+	border: 1px solid #D1D1D1;
+	font-size: 14px;
+	font-family: sans-serif;
+	text-align: justify;
+	resize: none;
+	box-sizing: border-box;
+}
+
+/*post bar where post and image button available*/
+.main .postbar
+{
+
+	padding: 10px 10px 1px 10px;
+}
+
+/*design button of post in postbar*/
+.main .postbar .imgbttn
+{	
+	display: inline;
+	/*float: left;*/
+	font-size: 15px;
+	background-color: white;
+	border: 3px solid #615D5E;
+	border-radius: 4px;
+	outline: 0px;
+	/*position: absolute;
+	left: 10px;*/
+	box-shadow: 3px 3px 5px #999999;
+}
+
+/*design button of post in postbar*/
+.main .postbar .postmypost
+{
+	display: inline;
+	float: right;
+	font-size: 16px;
+	padding: 6px 9px 4px 9px;
+	background-color: #43d854;
+	outline: 0px;
+	border: 0px;
+	border-radius: 4px;
+	box-shadow: 3px 3px 5px #999999;
+}
+
+/*post button hover effect*/
+.main .postbar .postmypost:hover
+{
+	background-color: #009688;
+	color: white;
+}
+
+/*post button when click effect*/
+.main .postbar .postmypost:active
+{
+  background-color: #4CAF50;
+  box-shadow: 0 5px 4px #666;
+  transform: translateY(5px);
+}
+
+/*choose image which overwritten by imgbttn*/
+.main .postbar #chooseimg
+{
+	width: 90px;
+	/*float: left;*/
+	height: 28px;
+	font-size: 12px;
+	position:absolute;
+	opacity: 0;
+}
+
+.main .postimg
+{
+	max-height: 150px;
+}
+
+/*like count in posted content*/
+.likedislike .like
+{
+	font-size: 11px;
+	font-family: Verdana;
+	color: #999;
+}
+
+/*like dislike button section in posted section*/
+.likedisbttn
+{
+	margin: 0px;
+	border: 1px solid #D1D1D1;
+	padding: 5px;
+}
+
+/*common class for like and dislike button*/
+.likedisbttn .fa
+{
+	/*color: #009688;*/
+	font-size: 18px;
+	margin-right: 10px;
+}
+
+/*like button of posted content*/
+.likedisbttn .fa-thumbs-up
+{
+	margin-left: 8px;
+}
+
+/*dislike button of posted content*/
+.likedisbttn .fa-thumbs-down
+{
+	margin-left: 13px;
+}
+
+/*mouse over effect in like and dislike button*/
+.likedisbttn .fa:hover
+{
+	color: #2196F3;
+	/*color: red;*/
+}
+
+/*mouse click effect in like and dislike button*/
+.likedisbttn .fa:active
+{
+  	transform: translateY(2px);
+}
+
+/*view more button in main content*/
+.viewmore
+{
+	display: block;
+	margin: 35px auto;
+	padding: 1px;
+	border: 2px solid #B7B7B7;
+	outline: 0px;
+	color: black;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px #999999;
+	font-size: 16px;
+}
+
+/*view more button when click change class name to loader*/
+
+.loader {
+	display: block;
+	margin: 35px auto;
+	padding: 1px;
+	outline: 0px;
+	border: 8px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 8px solid #00aeef;
+	width: 40px;
+	height: 40px;
+	-webkit-animation: spin 1s linear infinite;
+	animation: spin 1s linear infinite;
+}
+
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+ /*Post images css ends here*/    
+    </style>
+	  <!-- CSS Ends here -->
+	  
+	  <!-- Javascript starts here -->
+	  <script src="header.js"></script>
+      <script>
+		var incre=3; //For incrementing the id name for like,dislike,thumbsup and thumbsdown
+        function newpost()
+{
+    var loader=document.getElementById("viewmore");
+	loader.className="loader";
+	loader.innerHTML="";
+
+	// load new post after 3 sec
+	setTimeout(function()
+	{  
+
+	for(var i=0;i<10;i++)
+	{
+		/*====Parent DIV (mainpost)========*/
+		var div=document.createElement("DIV");
+		div.className="mainpost";
+
+		/* -------- adding div at the bottom ---------*/
+		var parent=document.getElementsByClassName("allpost");
+		parent[0].appendChild(div);
+		// var hr=document.createElement("hr");
+		// parent[0].appendChild(hr);
+
+		/*============ DIV userimg ===============*/
+		var div1=document.createElement("DIV");
+		div1.className="userimg";
+		var img=document.createElement("img");
+		img.src="../images/profile/other_profile.png";
+		div1.appendChild(img);
+		div.appendChild(div1);
+
+		/*============ DIV username ===============*/
+		var div2=document.createElement("DIV");
+		div2.className="username";
+		var para=document.createElement("p");
+		para.className="name";
+		var text1=document.createTextNode("User Name");
+		para.appendChild(text1);
+		div2.appendChild(para);
+		div.appendChild(div2);
+
+		/*---------- paragraph time ---------------*/
+		var para1=document.createElement("p");
+		para1.className="time";
+		var text2=document.createTextNode("2hr ago");
+		para1.appendChild(text2);
+		div.appendChild(para1);
+
+		/*---------- paragraph quotes ---------------*/
+		var para2=document.createElement("p");
+		para2.className="quotes";
+		var text3=document.createTextNode("I want a world where everything is welcome, everything is valid, everything is acknowledged, embraced, and accepted. To me, that's a perfect world.");
+		para2.appendChild(text3);
+		div.appendChild(para2);
+
+		/*============ DIV post ===============*/
+		var div3=document.createElement("DIV");
+		div3.className="post";
+		var img1=document.createElement("img");
+		img1.className="postimg";
+		// img1.src="../images/login/society.jpg";
+		div3.appendChild(img1);
+		div.appendChild(div3);
+
+		/*============ DIV likedislike ===============*/
+		var div4=document.createElement("DIV");
+		div4.className="likedislike";
+		/*$$$$$$$$$$ paragraph like $$$$$$$$$$$$$$$$*/
+		var para3=document.createElement("p");
+		para3.className="like";
+		/*........... Span nooflike ............*/
+		var span1=document.createElement("span");
+		span1.className="nooflike";
+		span1.id="like"+incre;
+		var spantext=document.createTextNode("0 ");
+		span1.appendChild(spantext);
+		var text4=document.createTextNode(" likes \u00a0 ");
+		para3.appendChild(span1);
+		para3.appendChild(text4);
+		div4.appendChild(para3);
+	    /*........... Span noofdislike ............*/
+		var span2=document.createElement("span");
+		span2.className="noofdislike";
+		span2.id="dislike"+incre;
+		var spantext1=document.createTextNode("0 ");
+		span2.appendChild(spantext1);
+		var text5=document.createTextNode(" dislikes");
+		para3.appendChild(span2);
+		para3.appendChild(text5);
+		div4.appendChild(para3);
+		/*$$$$$$$$$$$ paragraph likedisbttn $$$$$$$$$$$$$$$*/
+		var para4=document.createElement("p");
+		para4.className="likedisbttn";
+		/*........... Span fa fa-thumbs-up ............*/
+		var span3=document.createElement("span");
+		span3.className="fa fa-thumbs-up";
+		span3.id="thumbsup"+incre;
+	    /*........... Span noofdislike ............*/
+		var span4=document.createElement("span");
+		span4.className="fa fa-thumbs-down";
+		span4.id="thumbsdown"+incre;
+		/*^^^^^^^^^^ Span3 onclick code and append ^^^^^^^^^^*/
+		var fun1="increase"+"("+"'"+span1.id+"'"+","+"'"+span2.id+"'"+","+"'"+span3.id+"'"+","+"'"+span4.id+"'"+");";
+		span3.setAttribute("onClick",fun1);
+		para4.appendChild(span3);
+		div4.appendChild(para4);
+		/*^^^^^^^^^^ Span4 onclick code and append ^^^^^^^^^^*/
+		var fun2="decrease"+"("+"'"+span1.id+"'"+","+"'"+span2.id+"'"+","+"'"+span3.id+"'"+","+"'"+span4.id+"'"+");";
+		span4.setAttribute("onclick",fun2);
+		para4.appendChild(span4);
+		div4.appendChild(para4);
+		/*############## Appending DIV4 ############*/
+		div.appendChild(div4);
+
+		incre++;
+		loader.className="viewmore";
+		loader.innerHTML="View More";
+	}
+
+	},3000);
+	// end of load a new post after 3 sec
+		
+}
+
+
+// function to post a new post
+function mypost()
+{
+	/*====Parent DIV (mainpost)========*/
+	var div=document.createElement("DIV");
+	div.className="mainpost";
+
+	/* -------- adding div at the top ---------*/
+	var parent=document.getElementsByClassName("allpost");
+	parent[0].insertBefore(div, parent[0].childNodes[0]);
+
+	/*---------- paragraph time ---------------*/
+	var para1=document.createElement("p");
+	para1.className="time";
+	var text2=document.createTextNode("Just now");
+	para1.appendChild(text2);
+	div.appendChild(para1);
+
+	/*---------- paragraph quotes ---------------*/
+	var para2=document.createElement("p");
+	para2.className="quotes";
+	var pararec=document.getElementById("mypara");
+	// var paapa=pararec.value;
+	var paapa=pararec.value.replace(/\s/g, "\u00a0");
+	pararec.value="";
+
+	var text3=document.createTextNode(paapa);
+	para2.appendChild(text3);
+	div.appendChild(para2);
+	/*============ DIV likedislike ===============*/
+	var div4=document.createElement("DIV");
+	div4.className="likedislike";
+	/*$$$$$$$$$$ paragraph like $$$$$$$$$$$$$$$$*/
+	var para3=document.createElement("p");
+	para3.className="like";
+	/*........... Span nooflike ............*/
+	var span1=document.createElement("span");
+	span1.className="nooflike";
+	span1.id="like"+incre;
+	var spantext=document.createTextNode("0 ");
+	span1.appendChild(spantext);
+	var text4=document.createTextNode(" likes \u00a0 ");
+	para3.appendChild(span1);
+	para3.appendChild(text4);
+	div4.appendChild(para3);
+    /*........... Span noofdislike ............*/
+	var span2=document.createElement("span");
+	span2.className="noofdislike";
+	span2.id="dislike"+incre;
+	var spantext1=document.createTextNode("0 ");
+	span2.appendChild(spantext1);
+	var text5=document.createTextNode(" dislikes");
+	para3.appendChild(span2);
+	para3.appendChild(text5);
+	div4.appendChild(para3);
+	/*$$$$$$$$$$$ paragraph likedisbttn $$$$$$$$$$$$$$$*/
+	var para4=document.createElement("p");
+	para4.className="likedisbttn";
+	/*........... Span fa fa-thumbs-up ............*/
+	var span3=document.createElement("span");
+	span3.className="fa fa-thumbs-up";
+	span3.id="thumbsup"+incre;
+
+    /*........... Span noofdislike ............*/
+	var span4=document.createElement("span");
+	span4.className="fa fa-thumbs-down";
+	span4.id="thumbsdown"+incre;
+	/*^^^^^^^^^^ Span3 onclick code and append ^^^^^^^^^^*/
+	var fun1="increase"+"("+"'"+span1.id+"'"+","+"'"+span2.id+"'"+","+"'"+span3.id+"'"+","+"'"+span4.id+"'"+");";
+	span3.setAttribute("onClick",fun1);
+	para4.appendChild(span3);
+	div4.appendChild(para4);
+	/*^^^^^^^^^^ Span4 onclick code and append ^^^^^^^^^^*/
+	var fun2="decrease"+"("+"'"+span1.id+"'"+","+"'"+span2.id+"'"+","+"'"+span3.id+"'"+","+"'"+span4.id+"'"+");";
+	span4.setAttribute("onclick",fun2);
+	para4.appendChild(span4);
+	div4.appendChild(para4);
+	/*############## Appending DIV4 ############*/
+	div.appendChild(div4);
+
+	incre++;
+}
+
+/*======== Like increase =========*/
+
+function increase(likerec,dislikerec,thumbsuprec,thumbsdownrec)
+{
+	var idname1=likerec;
+	var idname2=dislikerec;
+	var thumbsup=thumbsuprec;
+	var thumbsdown=thumbsdownrec;
+	var like=document.getElementById(idname1);
+	like.innerHTML=parseInt(like.innerHTML)+1;
+	var up=document.getElementById(thumbsup);
+	up.style.color= "#009688";
+	up.style.pointerEvents="none";
+	var down=document.getElementById(thumbsdown)
+	if(down.style.color=="rgb(0, 150, 136)")
+	{
+		var dislike=document.getElementById(idname2);
+		dislike.innerHTML=parseInt(dislike.innerHTML)-1;
+	}
+	down.style.color="black";
+	down.style.pointerEvents="all";
+}
+
+/*============== Like decrease ================*/
+function decrease(likerec,dislikerec,thumbsuprec,thumbsdownrec)
+{
+	var idname1=likerec;
+	var idname2=dislikerec;
+	var thumbsup=thumbsuprec;
+	var thumbsdown=thumbsdownrec;
+	var dislike=document.getElementById(idname2);
+	dislike.innerHTML=parseInt(dislike.innerHTML)+1;
+	var down=document.getElementById(thumbsdown);
+	down.style.color= "#009688";
+	down.style.pointerEvents="none";
+	var up=document.getElementById(thumbsup);
+	if(up.style.color=="rgb(0, 150, 136)")
+	{
+		var like=document.getElementById(idname1);
+		like.innerHTML=parseInt(like.innerHTML)-1;
+	}
+	up.style.color="black";
+	up.style.pointerEvents="all";
+}
+
+
+// load view image to be posted
+ var loadFile = function(event) {
+	    var output = document.getElementById('load2');
+	    output.src = URL.createObjectURL(event.target.files[0]);
+	  };
+
+// changing imagebutton color on hover
+ function onbuttoncolor()
+ {
+ 	var on=document.getElementById("imgbttn");
+ 	on.style.backgroundColor = "#009688";
+ 	on.style.color="white";
+ }
+
+// chaging imagebutton color on hover out
+ function outbuttoncolor()
+ {
+ 	var out=document.getElementById("imgbttn");
+ 	out.style.backgroundColor = "white";
+ 	out.style.color="black";
+ }
+
+      </script>
+      <!-- Javascript Ends here -->
+        <body>
+            <!-- <h1>My Profile</h1>  -->
+            <div class="sidebar">
+                    <a href="Profile.html"><img src="Profile pika.png" alt="Avatar" class="avatar"> 
+                        <span class="icon "><i class="fa fa-edit"></i></span></a>                  
+                    <a href="Home.html"><i class="fa fa-fw fa-home"></i>Home</a> 
+                    <a href="Profile.html"><i class="fa fa-fw fa-user"></i>Profile</a> 
+                    <a href="#"><i class="fa fa-fw fa-envelope"></i>Contact</a>
+                    <a href="login.html"><i class="fa fa-sign-out"></i>Logout</a>
+            </div>
+            
+            <div class="main">
+				<h2>Home</h2>
+				<marquee width="60%" direction="left" height="80px">
+				<p>Welcome to your homepage.</p></marquee>
+                <!-- posted content view -->
+				<div class="allpost">
+					<!-- post 1 by creator-->
+					<div class="mainpost">
+						<div class="userimg"><img src="Nepal Logo.png"/>
+						</div>
+					    <div class="username">				 
+						<p class="name">Nepal group</p>
+					    </div>
+						<p class="time">3min ago</p>
+						<p class="quotes">
+							Kathmandu Durbar Square in front of the old royal palace of the former Kathmandu Kingdom is one of three Durbar Squares in the Kathmandu Valley in Nepal, all of which are UNESCO World Heritage Sites. Several buildings in the Square collapsed due to a major earthquake on 25 April 2015. 
+						</p>
+						<div class="post">
+							<img class="postimg" src="download 3.jpg"/>
+						</div>
+
+						<div class="likedislike">
+							<p class="like">
+								<span class="nooflike" id="like1">0 
+                </span> likes &nbsp <span class="noofdislike" id="dislike1">0 </span> dislikes
+							</p>
+							<p class="likedisbttn">
+								<span id="thumbsup1" class="fa fa-thumbs-up" onclick="increase('like1','dislike1','thumbsup1','thumbsdown1');"></span> <span id="thumbsdown1" class="fa fa-thumbs-down" onclick="decrease('like1','dislike1','thumbsup1','thumbsdown1');"></span>
+							</p>
+						</div>
+
+					</div>
+					<!-- end of post 1 by creator -->
+
+					<!-- post 2 by creator -->
+					<div class="mainpost">
+						<div class="userimg"><img src="Nepal Logo.png"/>
+						</div>
+					    <div class="username">				 
+                <p class="name">Nepal group</p>
+					    </div>
+						<p class="time">5min ago</p>
+						<p class="quotes">
+							Nepal contains part of the Himalayas, the highest mountain range in the world. Eight of the fourteen eight-thousanders are located in the country, either in whole or shared across a border with China or India. Nepal has the highest mountain in the world, Mount Everest as well as 1.310 peaks over 6.000 m height.
+						</p>
+						<div class="post">
+							<img class="postimg" src="images 4.jpg"/>
+						</div>
+
+						<div class="likedislike">
+							<p class="like">
+                <span class="nooflike" id="like2">0 </span> likes &nbsp 
+                <span class="noofdislike" id="dislike2">0 </span> dislikes
+							</p>
+							<p class="likedisbttn">
+								<span id="thumbsup2" class="fa fa-thumbs-up" onclick="increase('like2','dislike2','thumbsup2','thumbsdown2');"></span> <span id="thumbsdown2" class="fa fa-thumbs-down" onclick="decrease('like2','dislike2','thumbsup2','thumbsdown2');"></span>
+							</p>
+						</div>
+
+					</div>
+					<!-- end of post 2 by creator -->
+
+
+				</div>
+				<!-- end of posted content view -->
+              </div>
+        </body>
+    </head>
+</html>

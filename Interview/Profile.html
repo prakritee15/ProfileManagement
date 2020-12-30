@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Profile</title>
+    <!-- CSS Starts here -->
+    <link rel="stylesheet" type="text/css" href="header.css">
+    <style type="text/css">
+
+      .leftfixedprofile
+{
+	width: 790px;
+	height: 900px;
+	background-color: #F3F3F3;
+	float:left;
+}
+
+.bubble
+{
+	left: 46%;
+	top: 12px;
+	position: absolute;
+	z-index: 8888;
+}
+
+.dot
+{
+  background-color: #bbb;
+  border-radius: 50%;
+  height: 15px;
+  width:15px;
+  margin:0 4px;
+  display: inline-block;
+}
+
+.active, .dot:hover
+{
+  background-color: #717171;
+}
+
+.slideshowcontainer
+{
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	height: 360px;
+}
+
+.chooseslide
+{
+	position: absolute;
+	right: 14px;
+	top: 7px;
+	z-index:7777;
+	width: 20px;
+	opacity: 0;
+}
+
+.slideEdit
+{
+	cursor: pointer;
+	transform: scaleX(-1);
+	position:absolute;
+	right: 10px;
+	font-size: 26px;
+	padding: 0px;
+	margin: 0px;
+	z-index: 7666;
+	color: blue;
+}
+
+.chooseslide:hover ~ .slideEdit
+{
+	color: black;
+	opacity: 1;
+}
+
+/*change profile pic*/
+.chooseslide1
+{
+	position: absolute;
+	top: 38%;
+	right: 15px;
+	z-index:7777;
+	width: 20px;
+	opacity: 0;
+}
+
+.sidebarleftprofile .slideEdit1
+{
+	cursor: pointer;
+	transform: scaleX(-1);
+	position:absolute;
+	top: 35%;
+	right: 13px;
+	font-size: 26px;
+	padding: 0px;
+	margin: 0px;
+	z-index: 7666;
+	color: blue;
+}
+
+
+.chooseslide1:hover ~ .slideEdit1
+{
+	color: black;
+}
+
+
+.slideshowcontainer .singleslide img
+{
+	width: 100%;
+	height: 360px;
+}
+
+.singleslide
+{
+  width: 100%;
+  display:none;
+  animation: 1s fade;
+}
+
+@keyframes fade
+{
+  from
+  {
+    opacity: 0.2;
+    position: relative;
+    left: 100%;
+    width:0%;
+  }
+  to
+  {
+    opacity: 1;
+    position: relative;
+    width:100%;
+    left:0%;
+  }
+}
+
+.slideshowcontainer .singleslide .number
+{
+	position: absolute;
+	padding: 10px;
+	font-size: 18px;
+	font-family: verdana;
+	color: rgba(0,0,0,0.5);
+}
+
+.prev, .next
+{
+	cursor: pointer;
+	position: absolute;
+	top: 45%;
+	font-size: 26px;
+	font-weight: bold;
+	padding: 10px;
+    transition: all 0.5s ease-in-out;
+    border-radius: 0px 4px 4px 0px;
+}
+
+.next
+{
+	right: 0px;
+	border-radius: 4px 0px 0px 4px;
+}
+
+.prev:hover, .next:hover
+{
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+
+.sidebarleftprofile
+{
+	width: 200px;
+	background-color: transparent;
+	margin: 0px auto;
+	position: relative;
+	top: -80px;
+}
+
+
+.sidebarleftprofile img
+{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	display: block;
+	margin: 4px auto 25px auto;
+}
+
+.sidebarleftprofile #sidename
+{
+	text-align: center;
+	position: relative;
+	top: -10px;
+	margin: 0px;
+	font-size: 16px;
+	font-family: "Comic Sans MS";
+	font-weight: bold;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.sidebarleftprofile p
+{
+	text-align: center;
+	margin: 0px;
+	font-size: 12px;
+	font-family: "verdana";
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #525252;
+}
+
+
+#logout
+{
+	color: #009688;
+	margin: 2px;
+	margin-top: 18px;
+	text-align: center;
+	background-color: #009688;
+}
+
+#logout a
+{
+	display: block;
+	color: white;
+	font-size: 14px;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 4px;
+}
+
+#logout a:hover
+{
+	color: black;
+}
+
+.line
+{
+	position: relative;
+	top: -50px;
+	width: 90%;
+}
+
+.line1
+{
+	width: 0px;
+	border: 0.5px solid rgba(0,0,0,0.4);
+	height: 20%;
+	position: relative;
+	top: -60px;
+}
+
+/*parent of timeline*/
+.timeline
+{
+	width: 700px;
+	padding: 45px;
+	/*height: 400px;*/
+	position: relative;
+	top: -58px;
+	background-color: #474e5d;
+    font-family: Helvetica, sans-serif;
+    margin-bottom: 45px;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline:after
+{
+	content:'';
+	position: absolute;
+	left: 50%;
+	width: 6px;
+	background-color: white;
+	/*height: 100%;*/
+	top: 0px;
+	bottom: 0px;
+	margin-left: -3px;
+}
+
+/* Container around content */
+.container
+{
+	background-color: white;
+	padding: 10px 30px;
+	position:relative;
+	width: 35%;
+}
+
+.container p
+{
+	margin: 4px;
+}
+
+/* The circles on the timeline  left*/
+.container::after
+{
+	content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -61px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* The circles on the timeline right */
+.right::after
+{
+	content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: -61px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Place the container to the left */
+.left
+{
+	left: 0px;
+}
+
+/* Place the container to the right */
+.right
+{
+	left: 56.34%;
+}
+
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: -10px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: -10px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+h2
+{
+	color: #009688;
+}
+
+h4
+{
+	margin: 4px;
+}
+.tcontent p
+{
+	font-size: 15px;
+	margin: 4px;
+}
+
+.container .slideEdit2
+{	
+	cursor: pointer;
+	position: absolute;
+	transform: scaleX(-1);
+	font-size: 24px;
+	color: blue;
+	right: 5px;
+	top: -4px;
+}
+
+.container .slideEdit2:hover
+{
+	color: black;
+}
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 999998;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/*modal content to edit*/
+.Edit
+{
+
+	background-color: #fefefe;
+    margin: 0% auto 10% auto;
+    border: 1px solid #888;
+    width: 50%;
+    position: relative;
+
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+.Edit form
+{
+	margin: 20px auto;
+	width: 40%;
+}
+
+/* Full-width input fields */
+.Edit form input[type=text], .Edit form input[type=password],
+.Edit form input[type=number], .Edit form input[type=email] {
+    width: 100%;
+    padding: 10px 16px;
+    margin: 12px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Set a style for all buttons */
+.Edit form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 25px 0 6px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.Edit form button:hover {
+    opacity: 0.8;
+}
+
+
+
+/* Extra styles for the cancel button */
+.Edit form .cancelbtn {
+	margin-top: 13px;
+    background-color: #f44336;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0);} 
+    to {-webkit-transform: scale(1);}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0);} 
+    to {transform: scale(1);}
+}
+
+/*Add Zoom out animation*/
+.deanimate
+{
+	animation: animatezoomout 0.6s;
+}
+
+@keyframes animatezoomout
+{
+	from{transform: scale(1);}
+	to{transform: scale(0);}
+}
+
+/*----Removing the number increment in input --*/
+.Edit form input[type=number]::-webkit-inner-spin-button, 
+.Edit form input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+    </style>
+    <!-- CSS ends here -->
+
+    <!-- Javascript starts here -->
+    <script src="header.js"></script>
+    <script>
+      var slideIndex=1;
+      var click=0;
+      var time1;
+
+function plusSlides(n)
+{
+	click=1;
+	showSlides(slideIndex+=n);
+}
+
+function currentslide(n)
+{
+	click=1;
+	showSlides(slideIndex=n);
+}
+
+function showSlides(n)
+{
+	var slide=document.getElementsByClassName("singleslide");
+	var bubble=document.getElementsByClassName("dot");
+
+	if(n>slide.length)
+	{
+		slideIndex=1;
+	}
+	if(n<1)
+	{
+		slideIndex=slide.length;
+	}
+
+	for(var i=0;i<slide.length;i++)
+	{
+		slide[i].style.display="none";
+		bubble[i].className=bubble[i].className.replace(" active","");
+	}
+
+	slide[slideIndex-1].style.display="block";
+	bubble[slideIndex-1].className+=" active";
+	if(click==0)
+  		time1=setTimeout(function(){showSlides(slideIndex+=1);},4000);
+  	else if(click==1)
+    	 click=0;
+} 
+
+
+
+// load view image to slideshow
+ var loadFile = function(event) {
+	    var output = document.getElementsByClassName("slidimg");
+	    output[slideIndex-1].src = URL.createObjectURL(event.target.files[0]);
+		click=1;	  
+	    showSlides(slideIndex);
+	};
+
+
+function stoptime()
+{
+	clearTimeout(time1);
+	
+}
+
+function starttime()
+{
+	if(click==0)
+	showSlides(slideIndex);
+}
+
+// load view image to profile pic
+ var loadFile1 = function(event) {
+	    var output = document.getElementsByClassName("profilepic");
+	    output[0].src = URL.createObjectURL(event.target.files[0]);
+	};
+
+
+function disablemodal(n)
+{
+	var modal=document.getElementsByClassName('modal');
+	modal[n].className=modal[n].className.replace(" animate"," deanimate");
+	setTimeout(function(){document.getElementsByClassName('modal')[n].style.display='none';},500);
+}
+
+function enablemodal()
+{
+	var modal=document.getElementsByClassName('modal');
+	modal[0].className=modal[0].className.replace(" deanimate"," animate");
+	
+	// replacing content
+	var form=document.getElementsByTagName('form');
+	form[1].children[3].value=document.getElementsByClassName('tcontent')[0].children[2].innerHTML;
+	form[1].children[7].value=document.getElementsByClassName('tcontent')[0].children[4].innerHTML;
+	form[1].children[11].value=document.getElementsByClassName('tcontent')[0].children[6].innerHTML;
+	var dob=document.getElementsByClassName('tcontent')[0].children[8];
+	res=dob.innerHTML.split(" ");
+	form[1].children[15].value=res[0];
+	form[1].children[16].value=res[1];
+	form[1].children[17].value=res[2];
+	if(document.getElementsByClassName('tcontent')[0].children[10].innerHTML=="Male")
+	{
+	 form[1].children[19].checked=true;
+	}
+	else
+	{
+		form[1].children[21].checked=true;
+	}
+	form[1].children[26].value=document.getElementsByClassName('tcontent')[0].children[12].innerHTML;
+	form[1].children[30].value=document.getElementsByClassName('tcontent')[0].children[14].innerHTML;
+
+	// displaying edit menu
+	document.getElementsByClassName('modal')[0].style.display='block';
+}
+
+function enablemodal1(n)
+{
+	var modal=document.getElementsByClassName('modal');
+	modal[n].className=modal[n].className.replace(" deanimate"," animate");
+	
+	// replacing content
+	var form=document.getElementsByTagName('form');
+	form[n+1].children[3].value=document.getElementsByClassName('tcontent')[n].children[2].innerHTML;
+	form[n+1].children[7].value=document.getElementsByClassName('tcontent')[n].children[4].innerHTML;
+	form[n+1].children[11].value=document.getElementsByClassName('tcontent')[n].children[6].innerHTML;
+	var dob=document.getElementsByClassName('tcontent')[n].children[8];
+	res=dob.innerHTML.split("-");
+	form[n+1].children[16].value=res[0];
+	form[n+1].children[17].value=res[1];
+
+	// displaying edit menu
+	document.getElementsByClassName('modal')[n].style.display='block';
+}
+
+function enablemodal2()
+{
+	var modal=document.getElementsByClassName('modal');
+	modal[3].className=modal[3].className.replace(" deanimate"," animate");
+	
+	// replacing content
+	var form=document.getElementsByTagName('form');
+	form[4].children[3].value=document.getElementsByClassName('tcontent')[3].children[2].innerHTML;
+	form[4].children[7].value=document.getElementsByClassName('tcontent')[3].children[4].innerHTML;
+	form[4].children[11].value=document.getElementsByClassName('tcontent')[3].children[6].innerHTML;
+	form[4].children[15].value=document.getElementsByClassName('tcontent')[3].children[8].innerHTML;
+
+	// displaying edit menu
+	document.getElementsByClassName('modal')[3].style.display='block';
+}
+
+function enablemodal3()
+{
+	var modal=document.getElementsByClassName('modal');
+	modal[4].className=modal[4].className.replace(" deanimate"," animate");
+	
+	// replacing content
+	var form=document.getElementsByTagName('form');
+	form[5].children[3].value=document.getElementsByClassName('tcontent')[4].children[2].innerHTML;
+	form[5].children[7].value=document.getElementsByClassName('tcontent')[4].children[4].innerHTML;
+	form[5].children[11].value=document.getElementsByClassName('tcontent')[4].children[6].innerHTML;
+
+	// displaying edit menu
+	document.getElementsByClassName('modal')[4].style.display='block';
+}
+
+function update1()
+{
+	var modal=document.getElementsByClassName('modal');
+	var form=document.getElementsByTagName('form');
+
+	// disabling edit menu
+	if(form[1].children[3].value.length<1 || form[1].children[7].value.length<1 || form[1].children[11].value.length<1 || form[1].children[26].value.length<1 || form[1].children[30].value.length<1)
+	{
+
+	}
+	else
+	{
+
+		// replacing content
+	document.getElementsByClassName('tcontent')[0].children[2].innerHTML=form[1].children[3].value;
+	document.getElementsByClassName('tcontent')[0].children[4].innerHTML=form[1].children[7].value;
+	document.getElementsByClassName('tcontent')[0].children[6].innerHTML=form[1].children[11].value;
+	var dob=form[1].children[15].value+" "+form[1].children[16].value+" "+form[1].children[17].value;
+	document.getElementsByClassName('tcontent')[0].children[8].innerHTML=dob;
+
+	//updating name below profile pic
+	document.getElementById("sidename").innerHTML=form[1].children[3].value+" "+form[1].children[7].value;
+
+	if(form[1].children[19].checked==true)
+	{
+	
+	 document.getElementsByClassName('tcontent')[0].children[10].innerHTML="Male";
+	}
+	else
+	{
+		document.getElementsByClassName('tcontent')[0].children[10].innerHTML="Female";
+	}
+	document.getElementsByClassName('tcontent')[0].children[12].innerHTML=form[1].children[26].value;
+	document.getElementsByClassName('tcontent')[0].children[14].innerHTML=form[1].children[30].value;
+
+		modal[0].className=modal[0].className.replace(" animate"," deanimate");
+
+		setTimeout(function(){document.getElementsByClassName('modal')[0].style.display='none';},500);
+	}
+	
+
+}
+
+function update2(n)
+{
+	var modal=document.getElementsByClassName('modal');
+	var form=document.getElementsByTagName('form');
+	
+	// disabling edit menu
+	if(form[n+1].children[3].value.length<1 || form[n+1].children[7].value.length<1 || form[n+1].children[11].value.length<1 || form[n+1].children[16].value.length<1 || form[n+1].children[17].value.length<1)
+	{
+
+	}
+	else
+	{
+
+		// replacing content
+		document.getElementsByClassName('tcontent')[n].children[2].innerHTML=form[n+1].children[3].value;
+		document.getElementsByClassName('tcontent')[n].children[4].innerHTML=form[n+1].children[7].value;
+		document.getElementsByClassName('tcontent')[n].children[6].innerHTML=form[n+1].children[11].value;
+		var res=form[n+1].children[16].value+"-"+form[n+1].children[17].value;
+		document.getElementsByClassName('tcontent')[n].children[8].innerHTML=res;
+
+		modal[n].className=modal[n].className.replace(" animate"," deanimate");
+
+		setTimeout(function(){document.getElementsByClassName('modal')[n].style.display='none';},500);
+	}
+	
+}
+
+function update3()
+{
+	var modal=document.getElementsByClassName('modal');
+	var form=document.getElementsByTagName('form');
+	
+	// disabling edit menu
+	if(form[4].children[3].value.length<1 || form[4].children[7].value.length<1 || form[4].children[11].value.length<1 || form[4].children[15].value.length<1)
+	{
+
+	}
+	else
+	{
+		// replacing content
+		var form=document.getElementsByTagName('form');
+		document.getElementsByClassName('tcontent')[3].children[2].innerHTML=form[4].children[3].value;
+		document.getElementsByClassName('tcontent')[3].children[4].innerHTML=form[4].children[7].value;
+		document.getElementsByClassName('tcontent')[3].children[6].innerHTML=form[4].children[11].value;
+		document.getElementsByClassName('tcontent')[3].children[8].innerHTML=form[4].children[15].value;
+
+		modal[3].className=modal[3].className.replace(" animate"," deanimate");
+
+		setTimeout(function(){document.getElementsByClassName('modal')[3].style.display='none';},500);
+	}
+	
+}
+
+
+function update4()
+{
+	var modal=document.getElementsByClassName('modal');
+	var form=document.getElementsByTagName('form');
+	
+	// disabling edit menu
+	if(form[5].children[3].value=="Interest In" || form[5].children[7].value.length<1 || form[5].children[11].value.length<1)
+	{
+		if(form[5].children[3].value=="Interest In")
+			alert("Please select one of the following option");
+	}
+	else
+	{
+		// replacing content
+		document.getElementsByClassName('tcontent')[4].children[2].innerHTML=form[5].children[3].value;
+		document.getElementsByClassName('tcontent')[4].children[4].innerHTML=form[5].children[7].value;
+		document.getElementsByClassName('tcontent')[4].children[6].innerHTML=form[5].children[11].value;
+
+		modal[4].className=modal[4].className.replace(" animate"," deanimate");
+
+		setTimeout(function(){document.getElementsByClassName('modal')[4].style.display='none';},500);
+	}
+	
+}
+    </script>
+    <!-- Javascript ends here -->
+
+    <body onload="showSlides(1);">
+     <!-- Header section -->
+	<div class="headerfixed">
+		<!-- Header start -->
+	<div class="header">
+		<!-- Wrapper start of heading-->
+		<div class="wrapper">
+			<!-- My logo -->
+			<a href="home.html"><img src="Nepal Logo2.png" width=200 height=45 class="logoletter"/></a>
+
+			<!-- icon bar to navigate to all pages -->
+			<div class="icon-bar">
+			 <ul>
+			 	<!-- home -->
+			 	<li><a href="home.html" onmouseover="headerchange(1);" onmouseout="headerorigin(1);">
+           <img src="home.png" id="my-home"><p id="p1">Home</p></a></li>
+			 	<!-- profile -->
+			 	<li style="border-bottom: 6px solid white;"> 
+           <a href="profile.html" onmouseover="headerchange(2);" onmouseout="headerorigin(2);">
+           <img src="profile.png" id="my-profile"><p id="p2">Profile</p></a> </li>
+           <!-- logout -->
+			 	<li><a href="login.html" onmouseover="headerchange(3);" onmouseout="headerorigin(3);">
+           <img src="logout.png" id="my-logout"><p id="p3">Logout</p></a></li>
+			 		<hr style="background-color:white;width: 90%;">
+			 	</div>
+			 	</li>
+			 </ul>	 
+			   
+			</div>
+			<!-- Ending of Icon bar -->
+
+
+		</div>
+		<!-- Wrapper End of heading -->
+
+	</div>
+	<!-- End of header -->
+	</div>
+  <!-- End of header section -->
+  <!-- Content Section -->
+	<div class="content">
+		<!-- Start wrapper -->
+		<div class="wrapper">
+
+			<!-- Start Left section profile -->
+			<div class="leftfixedprofile">
+
+				<!-- area of slide show -->
+				<div class="slideshowcontainer">
+					
+					<!-- change slideshow image -->
+					<input type="file" name="pic" class="chooseslide" accept="image/*" title="change slideshow image" onchange="loadFile(event)" onmouseover="stoptime()" onmouseout="starttime()"/>
+					<p class="slideEdit">&#9998;</p>
+					<!-- end of change slideshow image -->
+
+					<div class="bubble">
+					<span class="dot" onclick="currentslide(1)"></span>
+					<span class="dot" onclick="currentslide(2)"></span>
+					<span class="dot" onclick="currentslide(3)"></span>
+					</div>
+
+					<!-- sildeshow images -->
+					<div class="singleslide">
+						<div class="number">1/3</div>
+						<img src="society1.jpg" class="slidimg"/>
+					</div>
+					<div class="singleslide">
+						<div class="number">2/3</div>
+						<img src="society2.jpg" class="slidimg"/>
+					</div>
+					<div class="singleslide">
+						<div class="number">3/3</div>
+						<img src="society3.jpg" class="slidimg"/>
+					</div>
+					<!-- End of slideshow images -->
+
+					<!-- prev and next button to change slideshow -->
+					<div class="prev" onclick="plusSlides(-1);">&#10094;</div>
+       				<div class="next" onclick="plusSlides(1);">&#10095;</div>
+				</div>
+				<!-- End area of slideshow -->
+
+				<!-- start sidebar left profile -->
+				<div class="sidebarleftprofile">
+
+					<!-- change image -->
+					<input type="file" name="pic" class="chooseslide1" accept="image/*" onchange="loadFile1(event)" title="change profile pic"/>
+					<p class="slideEdit1">&#9998;</p>
+					<!-- End change image -->
+
+					<img src="Profile pika.png" title="Profile Pic" class="profilepic"/>
+					<p id="sidename"> Pika Chu</p>
+					<p id="logout"><a href="login.html">Log Out</a></p>
+				</div>
+				<!-- End of sidebar left profile -->
+ 				
+
+				<!-- start of timeline of profile info -->
+ 				<div class="timeline">
+
+ 					<div class="container left">
+
+ 						<p class="slideEdit2" title="Edit" onclick="enablemodal()">&#9998;</p>
+ 						<div class="tcontent">
+ 							<h2>Personal Detail</h2>
+ 							<h4>First Name:</h4>
+               <p>Pika</p>
+               <h4>Middle Name:</h4>
+ 							<p></p>
+ 							<h4>Last Name:</h4>
+ 							<p>Chu</p>
+ 							<h4>Email:</h4>
+               <p>pika@chu.com</p>
+ 							<h4>Phone no:</h4>
+ 							<p>1234567890</p>
+ 						</div>
+
+ 					</div>
+ 					<div class="container right">
+
+ 						<p class="slideEdit2" title="Edit" onclick="enablemodal2()">&#9998;</p>
+ 						<div class="tcontent">
+ 							<h2>Address</h2>
+ 							<h4>Country:</h4>
+ 							<p>Nepal</p>
+ 							<h4>State:</h4>
+ 							<p>Koshi</p>
+ 							<h4>District:</h4>
+ 							<p>Sunsari</p>
+ 							<h4>ZIP code:</h4>
+ 							<p>730909</p>
+ 						</div>
+
+ 					</div>
+ 				</div>
+ 				<!-- End of timeline -->
+
+
+ 				<!-- Edit when click on timeline edit option -->
+ 				<!-- Personal Detail Edit -->
+ 				<div class="modal animate">
+					<div class="Edit">
+						<span class="close" title="Close Modal" onclick="disablemodal(0)">&times;</span>
+						<h2 align="center">Personal Detail Edit</h2>
+						<form action="#" onsubmit="return false">
+							<br/>
+							<label for="fname">First Name</label>
+							<br/>
+							<input type="text" id="fname" placeholder="Enter First Name" required/>
+
+              <br/>
+              <label for="mname">Middle Name</label>
+							<!-- <br/>
+							<input type="text" id="mname" placeholder="Enter Middle Name" required/> -->
+
+							<br/>
+							<label for="lname">Last Name</label>
+							<br/>
+							<input type="text" id="lname" placeholder="Enter Last Name" required/>
+							
+							<br/>
+							<label for="email">Email</label>
+							<br/>
+							<input type="email" id="email" placeholder="Enter Email-ID" required/>
+						<br/>
+							<label for="phoneno">Phone no</label>
+							<br/>
+							<input type="number" id="phoneno" placeholder="Enter Phone no" required/>
+							<br/>
+						    <button type="submit" onclick="update1()">Update</button>
+						    <br/>
+					    <button type="button" class="cancelbtn" onclick="disablemodal(0)">Cancel</button>
+					    <br/>
+						</form>
+
+					</div>
+ 				</div>
+ 				<!-- End of personal detail Edit -->
+
+ 				<!-- Address edit -->
+ 				<div class="modal animate">
+
+					<div class="Edit">
+
+						<span class="close" title="Close Modal" onclick="disablemodal(3)">&times;</span>
+						<h2 align="center">Address Edit</h2>
+
+						<form action="#" onsubmit="return false">
+							<br/>
+							<label for="country">Country</label>
+							<br/>
+							<input type="text" id="country" placeholder="Enter Country" required/>
+
+							<br/>
+							<label for="state">State</label>
+							<br/>
+							<input type="text" id="state" placeholder="Enter State" required/>
+							
+							<br/>
+							<label for="district">District</label>
+							<br/>
+							<input type="text" id="district" placeholder="Enter District" required/>
+
+							<br/>
+							<label for="zipcode">ZIP code</label>
+							<br/>
+							<input type="number" id="zipcode" placeholder="Enter ZIP code" required/>
+
+							<br/>
+						    <button type="submit" onclick="update3()">Update</button>
+
+						    <br/>
+					    <button type="button" class="cancelbtn" onclick="disablemodal(3)">Cancel</button>
+					    <br/>
+						</form>
+
+					</div>
+
+ 				</div>
+ 				<!-- End of address edit -->
+
+		</div>
+		<!-- End of wrapper -->
+
+	</div>
+	<!-- End of content section -->
+
+    </body>
+  </head>
+</html>
